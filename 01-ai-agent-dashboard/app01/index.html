@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Studio - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">✦</div>
+            <div>
+                <h2>Agent Studio</h2>
+                <span>AI Workspace</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#" class="nav-link active">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>◈</span> Agents
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>◉</span> Tasks
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>◫</span> Activity
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>⚙</span> Settings
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="system-status">
+                <span class="status-dot"></span>
+                All systems operational
+            </div>
+
+            <div class="user">
+                <div class="avatar">MS</div>
+                <div>
+                    <strong>My Workspace</strong>
+                    <small>Admin</small>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <!-- Header -->
+        <header class="topbar">
+            <div>
+                <p class="welcome">AI AGENT PLATFORM</p>
+                <h1>Dashboard</h1>
+            </div>
+
+            <div class="header-actions">
+                <button class="icon-btn" id="themeBtn">☾</button>
+                <button class="notification-btn">♢<span></span></button>
+
+                <button class="create-btn" id="createAgentBtn">
+                    + Create Agent
+                </button>
+            </div>
+        </header>
+
+
+        <!-- Stats -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Total Agents</span>
+                    <div class="stat-icon purple">✦</div>
+                </div>
+
+                <h2>24</h2>
+                <p class="positive">↑ 12% <span>vs last month</span></p>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Active Agents</span>
+                    <div class="stat-icon green">●</div>
+                </div>
+
+                <h2>18</h2>
+                <p class="positive">↑ 8% <span>currently running</span></p>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Tasks Running</span>
+                    <div class="stat-icon blue">⚡</div>
+                </div>
+
+                <h2>137</h2>
+                <p class="positive">↑ 24% <span>this week</span></p>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Success Rate</span>
+                    <div class="stat-icon orange">✓</div>
+                </div>
+
+                <h2>94.8%</h2>
+                <p class="positive">↑ 2.4% <span>vs last week</span></p>
+            </div>
+
+        </section>
+
+
+        <!-- Main Dashboard Grid -->
+        <section class="dashboard-grid">
+
+            <!-- Agent Performance -->
+            <div class="card performance-card">
+
+                <div class="card-header">
+                    <div>
+                        <h3>Agent Performance</h3>
+                        <p>Task execution overview</p>
+                    </div>
+
+                    <select id="performanceFilter">
+                        <option>Last 7 days</option>
+                        <option>Last 30 days</option>
+                        <option>Last 90 days</option>
+                    </select>
+                </div>
+
+                <div class="chart">
+                    <div class="y-labels">
+                        <span>200</span>
+                        <span>150</span>
+                        <span>100</span>
+                        <span>50</span>
+                        <span>0</span>
+                    </div>
+
+                    <div class="chart-area">
+                        <div class="grid-line line1"></div>
+                        <div class="grid-line line2"></div>
+                        <div class="grid-line line3"></div>
+                        <div class="grid-line line4"></div>
+
+                        <svg viewBox="0 0 700 250"
+                             preserveAspectRatio="none"
+                             class="chart-svg">
+
+                            <defs>
+                                <linearGradient id="areaGradient"
+                                    x1="0" y1="0"
+                                    x2="0" y2="1">
+
+                                    <stop offset="0%"
+                                          stop-color="#7c5cff"
+                                          stop-opacity=".3"/>
+
+                                    <stop offset="100%"
+                                          stop-color="#7c5cff"
+                                          stop-opacity="0"/>
+                                </linearGradient>
+                            </defs>
+
+                            <path
+                                class="area"
+                                d="M0,180
+                                   C60,165 80,190 130,145
+                                   S210,130 260,145
+                                   S320,80 370,110
+                                   S430,145 470,90
+                                   S540,105 580,65
+                                   S650,80 700,35
+                                   L700,250
+                                   L0,250 Z"/>
+
+                            <path
+                                class="line"
+                                d="M0,180
+                                   C60,165 80,190 130,145
+                                   S210,130 260,145
+                                   S320,80 370,110
+                                   S430,145 470,90
+                                   S540,105 580,65
+                                   S650,80 700,35"/>
+                        </svg>
+
+                        <div class="x-labels">
+                            <span>Mon</span>
+                            <span>Tue</span>
+                            <span>Wed</span>
+                            <span>Thu</span>
+                            <span>Fri</span>
+                            <span>Sat</span>
+                            <span>Sun</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Agent Status -->
+            <div class="card status-card">
+
+                <div class="card-header">
+                    <div>
+                        <h3>Agent Status</h3>
+                        <p>Current agent distribution</p>
+                    </div>
+
+                    <button class="more-btn">•••</button>
+                </div>
+
+                <div class="donut-container">
+                    <div class="donut">
+                        <div class="donut-center">
+                            <strong>24</strong>
+                            <span>Agents</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="legend">
+
+                    <div>
+                        <span class="legend-color active-color"></span>
+                        Active
+                        <strong>18</strong>
+                    </div>
+
+                    <div>
+                        <span class="legend-color idle-color"></span>
+                        Idle
+                        <strong>4</strong>
+                    </div>
+
+                    <div>
+                        <span class="legend-color error-color"></span>
+                        Error
+                        <strong>2</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Bottom Section -->
+        <section class="bottom-grid">
+
+            <!-- Recent Tasks -->
+            <div class="card tasks-card">
+
+                <div class="card-header">
+                    <div>
+                        <h3>Recent Tasks</h3>
+                        <p>Latest agent activities</p>
+                    </div>
+
+                    <button class="view-btn">View all →</button>
+                </div>
+
+                <div class="task-list">
+
+                    <div class="task">
+                        <div class="task-icon purple">✦</div>
+
+                        <div class="task-info">
+                            <strong>Market Research Agent</strong>
+                            <span>Competitor analysis</span>
+                        </div>
+
+                        <span class="badge success">Completed</span>
+                        <span class="task-time">2 min ago</span>
+                    </div>
+
+
+                    <div class="task">
+                        <div class="task-icon blue">◈</div>
+
+                        <div class="task-info">
+                            <strong>Data Processing Agent</strong>
+                            <span>Processing customer data</span>
+                        </div>
+
+                        <span class="badge running">Running</span>
+                        <span class="task-time">5 min ago</span>
+                    </div>
+
+
+                    <div class="task">
+                        <div class="task-icon orange">⚡</div>
+
+                        <div class="task-info">
+                            <strong>Content Agent</strong>
+                            <span>Generating blog content</span>
+                        </div>
+
+                        <span class="badge success">Completed</span>
+                        <span class="task-time">12 min ago</span>
+                    </div>
+
+
+                    <div class="task">
+                        <div class="task-icon red">!</div>
+
+                        <div class="task-info">
+                            <strong>Email Agent</strong>
+                            <span>Sending campaign emails</span>
+                        </div>
+
+                        <span class="badge failed">Failed</span>
+                        <span class="task-time">18 min ago</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Quick Actions -->
+            <div class="card actions-card">
+
+                <div class="card-header">
+                    <div>
+                        <h3>Quick Actions</h3>
+                        <p>Manage your AI workspace</p>
+                    </div>
+                </div>
+
+                <button class="action-btn" id="newTaskBtn">
+                    <span class="action-icon purple">+</span>
+                    <div>
+                        <strong>Create Task</strong>
+                        <small>Start a new task</small>
+                    </div>
+                    <span>→</span>
+                </button>
+
+
+                <button class="action-btn">
+                    <span class="action-icon blue">◈</span>
+                    <div>
+                        <strong>Manage Agents</strong>
+                        <small>Configure your agents</small>
+                    </div>
+                    <span>→</span>
+                </button>
+
+
+                <button class="action-btn">
+                    <span class="action-icon green">▣</span>
+                    <div>
+                        <strong>View Analytics</strong>
+                        <small>Check performance</small>
+                    </div>
+                    <span>→</span>
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Create Agent Modal -->
+    <div class="modal" id="agentModal">
+
+        <div class="modal-content">
+
+            <button class="close-btn" id="closeModal">×</button>
+
+            <div class="modal-icon">✦</div>
+
+            <h2>Create New Agent</h2>
+
+            <p>
+                Configure a new AI agent for your workspace.
+            </p>
+
+            <input
+                type="text"
+                id="agentName"
+                placeholder="Agent name">
+
+            <select>
+                <option>Select agent type</option>
+                <option>Research Agent</option>
+                <option>Data Agent</option>
+                <option>Content Agent</option>
+                <option>Automation Agent</option>
+            </select>
+
+            <button class="create-modal-btn" id="saveAgent">
+                Create Agent
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
