@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Agent Studio | UI Template Collection</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0b12;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            padding: 25px 7%;
+            border-bottom: 1px solid #242432;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, #7657ff, #a66cff);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+        }
+
+        .logo h2 {
+            font-size: 18px;
+        }
+
+        .logo p {
+            color: #858595;
+            font-size: 11px;
+            margin-top: 3px;
+        }
+
+        .github-btn {
+            text-decoration: none;
+            color: white;
+            border: 1px solid #353545;
+            padding: 10px 17px;
+            border-radius: 9px;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .github-btn:hover {
+            background: #ffffff;
+            color: #11111a;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            text-align: center;
+            padding: 90px 20px 65px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 7px 14px;
+            border-radius: 20px;
+            background: #181624;
+            border: 1px solid #302b4b;
+            color: #a991ff;
+            font-size: 12px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 72px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(
+                90deg,
+                #7657ff,
+                #c18cff
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: #9292a3;
+            font-size: 16px;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: auto;
+        }
+
+
+        /* ================= SECTION ================= */
+
+        .templates {
+            padding: 20px 7% 80px;
+        }
+
+        .section-heading {
+            margin-bottom: 25px;
+        }
+
+        .section-heading h2 {
+            font-size: 24px;
+        }
+
+        .section-heading p {
+            color: #858595;
+            margin-top: 7px;
+            font-size: 13px;
+        }
+
+
+        /* ================= TEMPLATE GRID ================= */
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(280px, 1fr)
+            );
+
+            gap: 22px;
+        }
+
+
+        /* ================= TEMPLATE CARD ================= */
+
+        .template-card {
+            background: #13131d;
+            border: 1px solid #272735;
+            border-radius: 18px;
+            padding: 22px;
+            transition: 0.3s;
+        }
+
+        .template-card:hover {
+            transform: translateY(-6px);
+            border-color: #7657ff;
+            box-shadow:
+                0 15px 40px rgba(118, 87, 255, 0.12);
+        }
+
+        .preview {
+            height: 180px;
+            border-radius: 12px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #1b1930,
+                    #101018
+                );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .preview-window {
+            width: 80%;
+            height: 70%;
+            background: #20202c;
+            border-radius: 9px;
+            padding: 12px;
+        }
+
+        .preview-top {
+            width: 45%;
+            height: 8px;
+            background: #7657ff;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .preview-boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 7px;
+        }
+
+        .preview-box {
+            height: 55px;
+            background: #2d2d3a;
+            border-radius: 6px;
+        }
+
+        .template-number {
+            color: #8065ff;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .template-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .template-card p {
+            color: #858595;
+            font-size: 12px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .tag-small {
+            background: #1d1d29;
+            border: 1px solid #30303d;
+            color: #aaaabb;
+            padding: 5px 9px;
+            border-radius: 6px;
+            font-size: 10px;
+        }
+
+        .open-btn {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background: #7657ff;
+            color: white;
+            padding: 11px;
+            border-radius: 9px;
+            font-size: 12px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .open-btn:hover {
+            background: #8b70ff;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            border-top: 1px solid #242432;
+            padding: 25px 7%;
+            text-align: center;
+            color: #666676;
+            font-size: 11px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 20px;
+            }
+
+            .github-btn {
+                display: none;
+            }
+
+            .hero {
+                padding: 65px 20px 45px;
+            }
+
+            .templates {
+                padding: 20px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ✦
+            </div>
+
+            <div>
+                <h2>AI Agent Studio</h2>
+                <p>UI Template Collection</p>
+            </div>
+
+        </div>
+
+        <a
+            href="https://github.com/"
+            target="_blank"
+            class="github-btn"
+        >
+            View on GitHub
+        </a>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="tag">
+            AI • AGENTS • UI TEMPLATES
+        </div>
+
+        <h1>
+            Modern
+            <span>AI Agent</span>
+            Interfaces
+        </h1>
+
+        <p>
+            A collection of modern, responsive and reusable
+            web UI templates designed for AI agent applications,
+            dashboards and intelligent workflows.
+        </p>
+
+    </section>
+
+
+    <!-- ================= TEMPLATES ================= -->
+
+    <section class="templates">
+
+        <div class="section-heading">
+
+            <h2>
+                AI Agent Dashboard
+            </h2>
+
+            <p>
+                Choose a template to explore the interface.
+            </p>
+
+        </div>
+
+
+        <div class="template-grid">
+
+
+            <!-- TEMPLATE 01 -->
+
+            <div class="template-card">
+
+                <div class="preview">
+
+                    <div class="preview-window">
+
+                        <div class="preview-top"></div>
+
+                        <div class="preview-boxes">
+
+                            <div class="preview-box"></div>
+                            <div class="preview-box"></div>
+                            <div class="preview-box"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="template-number">
+                    TEMPLATE 01
+                </div>
+
+                <h3>
+                    AI Agent Dashboard
+                </h3>
+
+                <p>
+                    A modern dashboard for monitoring
+                    AI agents, tasks, performance and
+                    system activity.
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag-small">
+                        HTML
+                    </span>
+
+                    <span class="tag-small">
+                        CSS
+                    </span>
+
+                    <span class="tag-small">
+                        JavaScript
+                    </span>
+
+                    <span class="tag-small">
+                        Responsive
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="./01-ai-agent-dashboard/template-01/index.html"
+                    class="open-btn"
+                >
+                    Open Template →
+                </a>
+
+            </div>
+
+
+            <!-- TEMPLATE 02 -->
+
+            <div class="template-card">
+
+                <div class="preview">
+
+                    <div class="preview-window">
+
+                        <div class="preview-top"></div>
+
+                        <div class="preview-boxes">
+
+                            <div class="preview-box"></div>
+                            <div class="preview-box"></div>
+                            <div class="preview-box"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="template-number">
+                    TEMPLATE 02
+                </div>
+
+                <h3>
+                    Coming Soon
+                </h3>
+
+                <p>
+                    Another AI agent dashboard design
+                    will be added to this collection.
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag-small">
+                        AI
+                    </span>
+
+                    <span class="tag-small">
+                        Dashboard
+                    </span>
+
+                    <span class="tag-small">
+                        UI
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="open-btn"
+                    onclick="comingSoon(event)"
+                >
+                    Coming Soon
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 AI Agent Studio • Built for UI Template Collection
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        function comingSoon(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Template 02 is coming soon!"
+            );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
